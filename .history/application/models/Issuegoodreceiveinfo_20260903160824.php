@@ -701,58 +701,58 @@ class Issuegoodreceiveinfo extends CI_Model{
 				$this->db->where('idtbl_grn_req', $grnreqid);
 				$this->db->update('tbl_grn_req', $datareq);
 
-				// $APIstatus = $this->load->model('Apiinfo');
-				// $APIstatus = $this->Apiinfo->InternalIssueApi($approveID);
+				$APIstatus = $this->load->model('Apiinfo');
+				$APIstatus = $this->Apiinfo->InternalIssueApi($approveID);
 				
-				// if (empty($APIstatus)) {
-				// 	throw new Exception("Internal Issue API configuration error: Missing chart of accounts for one or more items.");
-				// }
+				if (empty($APIstatus)) {
+					throw new Exception("Internal Issue API configuration error: Missing chart of accounts for one or more items.");
+				}
 
-				// $this->db->select('issuedate, total');
-				// $this->db->from('tbl_print_issue');
-				// $this->db->where('status', 1);
-				// $this->db->where('idtbl_print_issue', $approveID);
-				// $respond = $this->db->get();
+				$this->db->select('issuedate, total');
+				$this->db->from('tbl_print_issue');
+				$this->db->where('status', 1);
+				$this->db->where('idtbl_print_issue', $approveID);
+				$respond = $this->db->get();
 
-				// if (!empty($APIstatus)) {
-                //     $fullnarration = 'Costing for Internal Issue ID: ' . $approveID;
-                //     $apiurljobfinish = $_SESSION['accountapiurl'].'Api/JurnalEntryProcess';
+				if (!empty($APIstatus)) {
+                    $fullnarration = 'Costing for Internal Issue ID: ' . $approveID;
+                    $apiurljobfinish = $_SESSION['accountapiurl'].'Api/JurnalEntryProcess';
 
-                //     $postDataList = http_build_query([
-                //         'userid' => $userID,
-                //         'company' => $company,
-                //         'branch' => $branch,
-                //         'invoicedate' => $respond->row(0)->issuedate,
-                //         'fullnarration' => $fullnarration,
-				// 		'fulltotal' => $respond->row(0)->total,
-                //         'jurnalentrydata' => json_encode($APIstatus)
-                //     ]);
+                    $postDataList = http_build_query([
+                        'userid' => $userID,
+                        'company' => $company,
+                        'branch' => $branch,
+                        'invoicedate' => $respond->row(0)->issuedate,
+                        'fullnarration' => $fullnarration,
+						'fulltotal' => $respond->row(0)->total,
+                        'jurnalentrydata' => json_encode($APIstatus)
+                    ]);
 
-                //     $ch = curl_init();
-                //     curl_setopt_array($ch, [
-                //         CURLOPT_URL => $apiurljobfinish,
-                //         CURLOPT_POST => true,
-                //         CURLOPT_POSTFIELDS => $postDataList,
-                //         CURLOPT_RETURNTRANSFER => true,
-                //         CURLOPT_TIMEOUT => 30,
-                //         CURLOPT_HTTPHEADER => [
-                //             'Content-Type: application/x-www-form-urlencoded',
-                //         ]
-                //     ]);
+                    $ch = curl_init();
+                    curl_setopt_array($ch, [
+                        CURLOPT_URL => $apiurljobfinish,
+                        CURLOPT_POST => true,
+                        CURLOPT_POSTFIELDS => $postDataList,
+                        CURLOPT_RETURNTRANSFER => true,
+                        CURLOPT_TIMEOUT => 30,
+                        CURLOPT_HTTPHEADER => [
+                            'Content-Type: application/x-www-form-urlencoded',
+                        ]
+                    ]);
                     
-                //     $server_output = curl_exec($ch);
-                //     $curlError = curl_error($ch);
-                //     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-                //     curl_close($ch);
+                    $server_output = curl_exec($ch);
+                    $curlError = curl_error($ch);
+                    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+                    curl_close($ch);
 					
-                //     // Check both HTTP status and API response
-                //     $apiResponsejobfinish = json_decode($server_output, true);
+                    // Check both HTTP status and API response
+                    $apiResponsejobfinish = json_decode($server_output, true);
 
-                //     if ($httpCode != 200 || !isset($apiResponsejobfinish['status']) || $apiResponsejobfinish['status'] !== 'success') {
-                //         $errorMsg = $apiResponsejobfinish['message'] ?? 'API request failed in jobfinish';
-                //         throw new Exception($errorMsg);
-                //     }
-                // }
+                    if ($httpCode != 200 || !isset($apiResponsejobfinish['status']) || $apiResponsejobfinish['status'] !== 'success') {
+                        $errorMsg = $apiResponsejobfinish['message'] ?? 'API request failed in jobfinish';
+                        throw new Exception($errorMsg);
+                    }
+                }
 
 			} else {
 				$data = array(
