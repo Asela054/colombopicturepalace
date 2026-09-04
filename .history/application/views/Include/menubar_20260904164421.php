@@ -274,9 +274,9 @@ if(!empty($comsplit[1])): $comshowline2 = '('.$comsplit[1];else: $comshowline2 =
 					<?php } if(in_array("Allstockview", $permissionallowed)){ ?>
 					<a class="nav-link" href="<?php echo base_url().'Allstockview'; ?>">All
 						Stock View</a>
-					<!-- <?php } if(in_array("IssueMaterials", $permissionallowed)){ ?>
+					<?php } if(in_array("IssueMaterials", $permissionallowed)){ ?>
 					<a class="nav-link" href="<?php echo base_url().'IssueMaterials'; ?>">Issue
-						Materials</a> -->
+						Materials</a>
 					<?php } ?>
 				</nav>
 			</div>
@@ -356,7 +356,7 @@ if(!empty($comsplit[1])): $comshowline2 = '('.$comsplit[1];else: $comshowline2 =
 			<?php } ?> -->
 
 			<!-- Vehicle Management Menu New Added -->
-			<!-- <?php if(in_array("Vehicle", $permissionallowed) || in_array("Vehicletype", $permissionallowed) || in_array("Vehiclebrand", $permissionallowed) || in_array("Vehiclemodel", $permissionallowed) || in_array("Renewtype", $permissionallowed) || in_array("Service", $permissionallowed) || in_array("Serviceorder", $permissionallowed) || in_array("Approveserviceorder", $permissionallowed)){ ?>
+			<?php if(in_array("Vehicle", $permissionallowed) || in_array("Vehicletype", $permissionallowed) || in_array("Vehiclebrand", $permissionallowed) || in_array("Vehiclemodel", $permissionallowed) || in_array("Renewtype", $permissionallowed) || in_array("Service", $permissionallowed) || in_array("Serviceorder", $permissionallowed) || in_array("Approveserviceorder", $permissionallowed)){ ?>
 			<a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse"
 				data-target="#collapseVehicle" aria-expanded="false" aria-controls="collapseVehicle">
 				<div class="nav-link-icon"><i class="fas fa-car"></i></div>
@@ -380,7 +380,7 @@ if(!empty($comsplit[1])): $comshowline2 = '('.$comsplit[1];else: $comshowline2 =
 					<?php } if(in_array("Renewtype", $permissionallowed)){ ?>
 					<a class="nav-link" href="<?php echo base_url().'Renewtype'; ?>">Renew
 						Type</a>
-					<?php } ?> -->
+					<?php } ?>
 
 					<!-- Service Info Section -->
 					<!-- <?php if(in_array("Service", $permissionallowed) || in_array("Serviceorder", $permissionallowed) || in_array("Approveserviceorder", $permissionallowed)){ ?>
@@ -424,7 +424,7 @@ if(!empty($comsplit[1])): $comshowline2 = '('.$comsplit[1];else: $comshowline2 =
 			<?php } ?> -->
 
 			<!-- Report Menu New Added -->
-			<!-- <?php if(in_array("Jobreport", $permissionallowed) || in_array("Finishedjobsreport", $permissionallowed) || in_array("Unfinishedjobsreport", $permissionallowed) || in_array("Materialissuereport", $permissionallowed) || in_array("Sundryissuereport", $permissionallowed) || in_array("Invoicereport", $permissionallowed) || in_array("Salesreportnew", $permissionallowed) || in_array("Vehicledetailreport", $permissionallowed) || in_array("Vehiclerenewreport", $permissionallowed) || in_array("Vehicleservicereport", $permissionallowed) || in_array("UninvoiceDAReport", $permissionallowed) || in_array("Stocklistreport", $permissionallowed) || in_array("Stockvaluationreport", $permissionallowed) || in_array("Reorderstockreport", $permissionallowed) || in_array("Purchaseorderreport", $permissionallowed)){ ?>
+			<?php if(in_array("Jobreport", $permissionallowed) || in_array("Finishedjobsreport", $permissionallowed) || in_array("Unfinishedjobsreport", $permissionallowed) || in_array("Materialissuereport", $permissionallowed) || in_array("Sundryissuereport", $permissionallowed) || in_array("Invoicereport", $permissionallowed) || in_array("Salesreportnew", $permissionallowed) || in_array("Vehicledetailreport", $permissionallowed) || in_array("Vehiclerenewreport", $permissionallowed) || in_array("Vehicleservicereport", $permissionallowed) || in_array("UninvoiceDAReport", $permissionallowed) || in_array("Stocklistreport", $permissionallowed) || in_array("Stockvaluationreport", $permissionallowed) || in_array("Reorderstockreport", $permissionallowed) || in_array("Purchaseorderreport", $permissionallowed)){ ?>
 			<a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse"
 				data-target="#collapsereport" aria-expanded="false" aria-controls="collapsereport">
 				<div class="nav-link-icon"><i data-feather="file"></i></div>
@@ -482,7 +482,7 @@ if(!empty($comsplit[1])): $comshowline2 = '('.$comsplit[1];else: $comshowline2 =
 					<?php } ?>
 				</nav>
 			</div>
-			<?php } ?> -->
+			<?php } ?>
 
 			<!-- User Account Menu New Added -->
 			<?php if(in_array("Useraccount", $permissionallowed) || in_array("Usertype", $permissionallowed) || in_array("Userprivilege", $permissionallowed) || in_array("Userpermissions", $permissionallowed) || in_array("Userroles", $permissionallowed)){ ?>

@@ -462,18 +462,18 @@ include "include/topnavbar.php";
 					"render": function (data, type, full) {
 						var button = '';
 						button += '<a href="<?php echo base_url() ?>Issuegoodreceive/Issuepdf/' + full['idtbl_print_issue'] + '" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Print" class="btn btn-secondary btn-sm btnPdf mr-1" data-toggle="tooltip" data-placement="bottom" title="Issue Item Request PDF"><i class="fas fa-file-pdf"></i></a>';
-						// if (full['approvestatus'] == 0 && accountcheck == 1) {
-						// 	button += 
-						// 		'<button ' +
-						// 			'class="btn btn-primary btn-sm btnAddAccount mr-1" ' +
-						// 			'data-toggle="tooltip" ' +
-						// 			'data-placement="bottom" ' +
-						// 			'title="Add Accounts" ' +
-						// 			'id="' + full['idtbl_print_issue'] + '" ' +
-						// 			'data-grn-req-id="' + full['tbl_grn_req_idtbl_grn_req'] + '">' +
-						// 			'<i class="fas fa-file-invoice"></i>' +
-						// 		'</button>';
-						// }
+						if (full['approvestatus'] == 0 && accountcheck == 1) {
+							button += 
+								'<button ' +
+									'class="btn btn-primary btn-sm btnAddAccount mr-1" ' +
+									'data-toggle="tooltip" ' +
+									'data-placement="bottom" ' +
+									'title="Add Accounts" ' +
+									'id="' + full['idtbl_print_issue'] + '" ' +
+									'data-grn-req-id="' + full['tbl_grn_req_idtbl_grn_req'] + '">' +
+									'<i class="fas fa-file-invoice"></i>' +
+								'</button>';
+						}
 						button += '<button data-toggle="tooltip" data-placement="bottom" title="View Issue Note" class="btn btn-dark btn-sm btnview mr-1" id="' + full[
                         'idtbl_print_issue'] + '" aproval_id="' + full[
                             'approvestatus'] + '" check_status="' + full[
