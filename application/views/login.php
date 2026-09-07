@@ -182,7 +182,7 @@
             
             <div class="mb-4">
                 <div class="logo-box">
-                    <img src="images/Multi Offset Printers logo.png" alt="Multi Offset Printers Logo">
+                    <img src="images/pictures.png" alt="Logo">
                 </div>
             </div>
             
