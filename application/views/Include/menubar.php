@@ -68,21 +68,22 @@ if(!empty($comsplit[1])): $comshowline2 = '('.$comsplit[1];else: $comshowline2 =
 			</a>
 
 			<!-- Master file Menu New Added -->
-			<?php if(in_array("Location", $permissionallowed) || in_array("Measurements", $permissionallowed) || in_array("Servicetype", $permissionallowed) || in_array("Taxcontrol", $permissionallowed) || in_array("Charges", $permissionallowed) || in_array("Chargesdetail", $permissionallowed) || in_array("Serviceitemlist", $permissionallowed) || in_array("Expences", $permissionallowed) || in_array("Uomconversions", $permissionallowed)) { ?>
+			<?php if(in_array("Location", $permissionallowed) || in_array("Employee", $permissionallowed) || in_array("Measurements", $permissionallowed) || in_array("Servicetype", $permissionallowed) || in_array("Taxcontrol", $permissionallowed) || in_array("Charges", $permissionallowed) || in_array("Chargesdetail", $permissionallowed) || in_array("Serviceitemlist", $permissionallowed) || in_array("Expences", $permissionallowed) || in_array("Uomconversions", $permissionallowed)) { ?>
 			<a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse"
 				data-target="#collapsMasterfile" aria-expanded="false" aria-controls="collapsMasterfile">
 				<div class="nav-link-icon"><i class="fa fa-print"></i></div>
 				<span>Master Information</span>
 				<div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
 			</a>
-			<div class="collapse <?php if($functionmenu=="Location" || $functionmenu=="Measurements" || $functionmenu=="Servicetype" || $functionmenu=="Taxcontrol" || $functionmenu=="Serviceitemlist" || $functionmenu=="Charges" || $functionmenu=="Chargesdetail" || $functionmenu=="Expences" || $functionmenu=="Uomconversions"){echo 'show';} ?>"
+			<div class="collapse <?php if($functionmenu=="Location" || $functionmenu=="Employee" || $functionmenu=="Measurements" || $functionmenu=="Servicetype" || $functionmenu=="Taxcontrol" || $functionmenu=="Serviceitemlist" || $functionmenu=="Charges" || $functionmenu=="Chargesdetail" || $functionmenu=="Expences" || $functionmenu=="Uomconversions"){echo 'show';} ?>"
 				id="collapsMasterfile" data-parent="#accordionSidenav">
 				<nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
 					<!-- <?php if(in_array("Location", $permissionallowed)){ ?>
 					<a class="nav-link" href="<?php echo base_url().'Location'; ?>">Location</a> -->
+					<?php } if(in_array("Employee", $permissionallowed)){ ?>
+					<a class="nav-link" href="<?php echo base_url().'Employee'; ?>">Employee</a>
 					<?php } if(in_array("Measurements", $permissionallowed)){ ?>
-					<a class="nav-link"
-						href="<?php echo base_url().'Measurements'; ?>">Measurements</a>
+					<a class="nav-link" href="<?php echo base_url().'Measurements'; ?>">Measurements</a>
 					<!-- <?php } if(in_array("Servicetype", $permissionallowed)){ ?>
 					<a class="nav-link" href="<?php echo base_url().'Servicetype'; ?>">Service
 						Type</a> -->
