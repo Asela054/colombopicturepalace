@@ -21,11 +21,11 @@ function menucheck($arraymenu, $menuID){
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 	<meta name="description" content="" />
 	<meta name="author" content="" />
-	<title>Multi DVMT - By Erav Technology</title>
+	<title><?php echo !empty($_SESSION['companyname']) ? $_SESSION['companyname'] : 'Printing Job Management Portal' ?> - By Erav Technology</title>
 	<link href="<?php echo base_url() ?>assets/css/styles.css" rel="stylesheet" />
 	<link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
 	<link href="https://cdn.datatables.net/buttons/2.1.0/css/buttons.bootstrap4.min.css" rel="stylesheet" />
-	<link rel="icon" type="image/x-icon" href="<?php echo base_url() ?>images/book.jpg" />
+	<link rel="icon" type="image/x-icon" href="<?php echo base_url() ?>images/pictures.png" />
 	<script data-search-pseudo-elements defer
 		src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"></script>
 	<!-- Datepicker CSS -->
