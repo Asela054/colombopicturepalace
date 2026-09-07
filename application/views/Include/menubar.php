@@ -78,6 +78,7 @@ if(!empty($comsplit[1])): $comshowline2 = '('.$comsplit[1];else: $comshowline2 =
 			<div class="collapse <?php if($functionmenu=="Location" || $functionmenu=="Employee" || $functionmenu=="Measurements" || $functionmenu=="Servicetype" || $functionmenu=="Taxcontrol" || $functionmenu=="Serviceitemlist" || $functionmenu=="Charges" || $functionmenu=="Chargesdetail" || $functionmenu=="Expences" || $functionmenu=="Uomconversions"){echo 'show';} ?>"
 				id="collapsMasterfile" data-parent="#accordionSidenav">
 				<nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
+<<<<<<< HEAD
 					<!-- <?php if(in_array("Location", $permissionallowed)){ ?>
 					<a class="nav-link" href="<?php echo base_url().'Location'; ?>">Location</a> -->
 					<?php } if(in_array("Employee", $permissionallowed)){ ?>
@@ -85,12 +86,20 @@ if(!empty($comsplit[1])): $comshowline2 = '('.$comsplit[1];else: $comshowline2 =
 					<?php } if(in_array("Measurements", $permissionallowed)){ ?>
 					<a class="nav-link" href="<?php echo base_url().'Measurements'; ?>">Measurements</a>
 					<!-- <?php } if(in_array("Servicetype", $permissionallowed)){ ?>
+=======
+					<?php if(in_array("Location", $permissionallowed)){ ?>
+					<a class="nav-link" href="<?php echo base_url().'Location'; ?>">Location</a>
+					<?php } if(in_array("Measurements", $permissionallowed)){ ?>
+					<a class="nav-link"
+						href="<?php echo base_url().'Measurements'; ?>">Measurements</a>
+					<?php } if(in_array("Servicetype", $permissionallowed)){ ?>
+>>>>>>> dba688ea9d9fc36483fa91c5984ae7b5fd9cdd80
 					<a class="nav-link" href="<?php echo base_url().'Servicetype'; ?>">Service
-						Type</a> -->
-					<!-- <?php } if(in_array("Taxcontrol", $permissionallowed)){ ?>
+						Type</a>
+					<?php } if(in_array("Taxcontrol", $permissionallowed)){ ?>
 					<a class="nav-link" href="<?php echo base_url().'Taxcontrol'; ?>">Tax
-						Control</a> -->
-					<!-- <?php } if(in_array("Charges", $permissionallowed)){ ?>
+						Control</a>
+					<?php } if(in_array("Charges", $permissionallowed)){ ?>
 					<a class="nav-link" href="<?php echo base_url().'Charges'; ?>">Charges
 						Type</a>
 					<?php } if(in_array("Chargesdetail", $permissionallowed)){ ?>
@@ -101,7 +110,7 @@ if(!empty($comsplit[1])): $comshowline2 = '('.$comsplit[1];else: $comshowline2 =
 						href="<?php echo base_url().'Serviceitemlist'; ?>">Service Item List</a>
 					<?php } if(in_array("Expences", $permissionallowed)){ ?>
 					<a class="nav-link" href="<?php echo base_url().'Expences'; ?>">Costing
-						Types</a> -->
+						Types</a>
 					<?php } if(in_array("Uomconversions", $permissionallowed)){ ?>
 					<a class="nav-link" href="<?php echo base_url().'Uomconversions'; ?>">UOM
 						Conversions</a>
